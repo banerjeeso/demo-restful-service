@@ -54,12 +54,11 @@
 		<dependency><!-- jackson -->
             <groupId>org.codehaus.jackson</groupId><artifactId>jackson-mapper-asl</artifactId><version>1.4.2</version>
         </dependency>
-	    
-
-		
+        		
 		<dependency>
 		    <groupId>org.hsqldb</groupId>
-		    <artifactId>hsqldb</artifactId>		    
+		    <artifactId>hsqldb</artifactId>	
+		     <version>2.4.0</version>	    
 		</dependency>    
 
 		<dependency>
