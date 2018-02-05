@@ -1,4 +1,4 @@
-package com.cromecast.response;
+package com.cromecast.service;
 
 import java.io.IOException;
 import java.security.KeyManagementException;

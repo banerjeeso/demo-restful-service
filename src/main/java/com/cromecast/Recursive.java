@@ -1,35 +1,24 @@
-package com.cromecast.service;
-
-import static java.util.stream.Collectors.toList;
+package com.cromecast;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+public class Recursive {
 
-@Service
-public class FibonacciService {
-
-	Logger log = LoggerFactory.getLogger(FibonacciService.class);
-	
-	List<Integer> answerList= new ArrayList<Integer>();
-
+	List<Integer> answerList = new ArrayList<Integer>();
 	private static BigInteger[] answers;
-	
 
-	public List<Integer> generateFibonacci(int series) {
-		return Stream
-				.iterate(new int[] { 0, 1 },
-						s -> new int[] { s[1], s[0] + s[1] }).limit(series)
-				.map(n -> n[0]).collect(toList());
+	public static void main(String[] args) {
+		Recursive r = new Recursive();
+		r.generateFibonacci(9);
 	}
 
-	public List<BigInteger> recursiveFibonacci(int n) {
+	public List<BigInteger> generateFibonacci(int n) {
 
 		// Initializing answers
 		answers = new BigInteger[n + 1];
@@ -38,7 +27,6 @@ public class FibonacciService {
 		for (int i = 2; i < n + 1; i++)
 			answers[i] = new BigInteger("0");
 		fastFibonacci(n + 1);
-		
 		return Arrays.asList(answers);
 	}
 

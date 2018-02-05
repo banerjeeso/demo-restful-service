@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UniqueWordsService {
 
-	private List<String> findWords(String lines[]) {
+	private List<String> getAllWords(String lines[]) {
 		List<String> allWords = new ArrayList<String>();
 		List<String> line = Arrays.asList(lines);
 		line.forEach(eachLine -> {
@@ -28,7 +28,7 @@ public class UniqueWordsService {
 	public Map<String, Integer> getFrequency(String lines[]) {
 		Map<String, Integer> sortedwords = new TreeMap<String, Integer>();
 
-		List<String> allWords = findWords(lines);
+		List<String> allWords = getAllWords(lines);
 
 		if (!allWords.isEmpty()) {
 			Set<String> uniqueSet = new TreeSet<String>(allWords);

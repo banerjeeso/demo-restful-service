@@ -1,19 +1,18 @@
 package com.cromecast.response;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class FibonacciResponse {
-	List<Integer> fibonacciResult;
+	List<BigInteger> fibonacciResult;
 
-	public FibonacciResponse() {
-
-	}
+	public FibonacciResponse() {}
 
 	public Object[] getFibonacciResult() {
 		return fibonacciResult.toArray();
 	}
 
-	public void setFibonacciResult(List<Integer> fibonacciResult) {
+	public void setFibonacciResult(List<BigInteger> fibonacciResult) {
 		this.fibonacciResult = fibonacciResult;
 	}
 

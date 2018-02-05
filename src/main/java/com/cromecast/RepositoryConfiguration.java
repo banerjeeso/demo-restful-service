@@ -13,18 +13,21 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableAutoConfiguration
-@EntityScan(basePackages = {"com.cromecast.domain"})
-@EnableJpaRepositories(basePackages = {"com.cromecast.repositories"})
+@EntityScan(basePackages = { "com.cromecast.domain" })
+@EnableJpaRepositories(basePackages = { "com.cromecast.repositories" })
 @EnableTransactionManagement
+
+/*
+ * Configuration JPA repository location so that Spring data can find our all
+ * defined repository interfaces that are extending CrudRepository.
+ * 
+ * And load the Embedded Database for HSQL
+ */
 public class RepositoryConfiguration {
-	
-	
+
 	@Bean(name = "dataSource")
-	public DataSource  dataSource() {
-		 return new EmbeddedDatabaseBuilder()
-         .setType(EmbeddedDatabaseType.HSQL)         
-         .addScript("/data.sql")
-         .setName("STUDENT")
-         .build();
+	public DataSource dataSource() {
+		return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL)
+				.addScript("/data.sql").setName("PRODUCT").build();
 	}
 }
