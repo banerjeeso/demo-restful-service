@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  context-path: /demo
+  
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa: 
+    hibernate:
+      ddl-auto: none    
+      
+logging:
+  level:
+    org:
+      hibernate:
+       SQL: info
+
+external:
+  service:
+    url:  https://jsonplaceholder.typicode.com/posts         
+
+  

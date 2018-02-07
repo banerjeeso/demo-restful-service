@@ -17,8 +17,44 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<version.servlet.api>3.1.0</version.servlet.api>		
+		<version.servlet.api>3.1.0</version.servlet.api>	
+		<ut.path.pattern>**/*UT.java</ut.path.pattern>	
+		<jacoco.version>0.7.5.201505241946</jacoco.version>		
 	</properties>
+	
+	<profiles>
+        <profile>
+            <id>coverage-ut</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>                           
+                            <includes>
+                                <include>${ut.path.pattern}</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco.version}</version>
+                        <executions>
+                            <execution>
+                                <id>prepare-ut-agent</id>
+                                <phase>process-test-classes</phase>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>                            
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+          
+        </profile>
+    </profiles>
 
 	<dependencies>
 		<dependency>
