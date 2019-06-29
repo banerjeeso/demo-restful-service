@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * POC application
- * @author Somnath
+ * @author Somnath Banerjee
  *
  */
 @SpringBootApplication

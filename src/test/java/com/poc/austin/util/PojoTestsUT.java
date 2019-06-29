@@ -14,7 +14,7 @@ import com.poc.austin.response.ProductResult;
 import com.poc.austin.response.User;
 
 
-
+/**test**/
 public class PojoTestsUT {
 	
 	@Test
